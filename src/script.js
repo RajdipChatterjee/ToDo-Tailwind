@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     li.setAttribute('data-id', task.id)
     li.innerHTML = `<li class="flex items-center">
                 <span class="grow">${task.text}</span>
-                <button id="deleteButton" class="bg-red-800 px-2 py-1 rounded-sm duration-300 hover:bg-red-700">delete</button>
+                <button id="deleteButton" class="bg-red-800 px-2 py-1 rounded-sm duration-300 hover:bg-red-700">delte</button>
             </li>`
     todoList.appendChild(li);
     li.addEventListener('click', (e) => {
