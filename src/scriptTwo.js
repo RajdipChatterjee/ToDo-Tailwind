@@ -29,18 +29,32 @@ document.addEventListener("DOMContentLoaded", () => {
     li.innerHTML = `
     <span class="grow">${task.text}</span>
     <div>
-        <button id="deleteButton" class="bg-blue-600 p-1 rounded-sm duration-300 hover:bg-blue-500">
+        <button class="delete-btn bg-blue-600 p-1 rounded-sm duration-300 hover:bg-blue-500">
             <img src="./assets/edit-svgrepo-com.svg" />
         </button>
-        <button id="deleteButton" class="bg-red-600 p-1 rounded-sm duration-300 hover:bg-red-500">
+        <button class="edit-btn bg-red-600 p-1 rounded-sm duration-300 hover:bg-red-500">
             <img src="./assets/trash-bin-trash-svgrepo-com.svg" />
         </button>
     </div>
     `;
     todoList.append(li);
+    li.addEventListener('click', (e) => {
+      if(e.target.tagName === 'BUTTON') return;
+      task.completed = !task.completed;
+      li.classList.toggle('line-through')
+      saveTask();
+    })
+
+    li.querySelector('.delete-btn').addEventListener('click', (e) => {
+      e.stopPropagation(); // prevent toggle from firing
+      tasks = tasks.filter((t) => t.id != task.id);
+      li.remove();
+      saveTask();
+      tasks.forEach((task)=>renderTask(task));
+    })
   }
 
   tasks.forEach((value) => {
-    
+
   })
 });
