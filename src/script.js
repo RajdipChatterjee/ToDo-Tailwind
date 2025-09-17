@@ -98,6 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // events
       input.addEventListener("blur", commit, { once: true });
       input.addEventListener("keydown", (ev) => {
+        ev.stopPropagation();
         if (ev.key === "Enter") commit();
         if (ev.key === "Escape") input.replaceWith(span);
       });
