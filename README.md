@@ -1,5 +1,5 @@
 # 📝 Todo App  
-
+![alt text](image.png)
 A very simple **utility-first** Todo application built using **Tailwind CSS** and **vanilla JavaScript**.  
 This project is focused on practicing Tailwind utilities, DOM manipulation, and keeping the codebase minimal — no frameworks, no build tools, just plain HTML, CSS, and JS.  
 
